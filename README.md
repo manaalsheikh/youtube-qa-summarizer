@@ -1,15 +1,3 @@
----
-title: Youtube Summarizer QA
-emoji: 🎥
-colorFrom: blue
-colorTo: indigo
-sdk: streamlit
-sdk_version: 1.35.0
-app_file: app.py
-pinned: false
-license: mit
----
-
 # YouTube Video Summarizer & QA
 
 A high-performance web application that summarizes YouTube videos and allows users to ask questions about the content using the Groq API.
@@ -18,7 +6,7 @@ A high-performance web application that summarizes YouTube videos and allows use
 - **Sleek Interface**: Built with Streamlit for a smooth user experience.
 - **Fast Summarization**: Powered by Groq's Llama 3.3 70B model.
 - **Interactive QA**: Chat with the video content to find specific information.
-- **Modular Design**: Separated UI and logic for easy maintenance.
+- **Robust Fetching**: Uses `yt-dlp` to ensure reliable transcript extraction.
 
 ## Setup
 1. Clone the repository.
@@ -32,7 +20,7 @@ A high-performance web application that summarizes YouTube videos and allows use
    streamlit run app.py
    ```
 
-## Hugging Face Deployment
-When deploying to Hugging Face Spaces:
-1. Choose the **Streamlit** SDK.
-2. Add your `GROQ_API_KEY` as a **Secret** in the Space settings.
+## Deployment
+This app is optimized for **Streamlit Cloud**.
+- Add your `GROQ_API_KEY` in the **Secrets** section of your Streamlit Cloud dashboard.
+- If you encounter blocks from YouTube, add a `cookies.txt` file to your repository (ensure it is ignored by git if it contains private data).
