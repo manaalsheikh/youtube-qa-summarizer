@@ -13,7 +13,11 @@ def get_video_id(url):
 def fetch_transcript(video_id):
     try:
         api=YouTubeTranscriptApi()
-        transcript_data=api.list(video_id)
+        cookies_path='cookies.txt'
+        if os.path.exists(cookies_path):
+            transcript_data=api.list(video_id,cookies=cookies_path)
+        else:
+            transcript_data=api.list(video_id)
         english_transcript=transcript_data.find_transcript(['en','es','fr','de'])
         segments=english_transcript.fetch()
         return " ".join([s.text for s in segments])
