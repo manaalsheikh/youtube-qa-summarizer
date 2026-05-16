@@ -6,7 +6,7 @@ from utils import get_video_id,fetch_transcript,generate_summary,get_ai_response
 
 # Load settings
 load_dotenv()
-api_key=os.getenv("GROQ_API_KEY")
+api_key=os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
 
 # App configuration
 st.set_page_config(page_title="YouTube Video AI",layout="wide")
